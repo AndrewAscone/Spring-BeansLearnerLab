@@ -1,1 +1,13 @@
 com/zipcode/rocks/bean/BeanApplication.class
+com/zipcode/rocks/bean/Instructor.class
+com/zipcode/rocks/bean/Classroom.class
+com/zipcode/rocks/bean/Person.class
+com/zipcode/rocks/bean/InstructorsConfig.class
+com/zipcode/rocks/bean/StudentConfig.class
+com/zipcode/rocks/bean/Teacher.class
+com/zipcode/rocks/bean/Students.class
+com/zipcode/rocks/bean/Learner.class
+com/zipcode/rocks/bean/People.class
+com/zipcode/rocks/bean/Student.class
+com/zipcode/rocks/bean/ClassroomConfig.class
+com/zipcode/rocks/bean/Instructors.class

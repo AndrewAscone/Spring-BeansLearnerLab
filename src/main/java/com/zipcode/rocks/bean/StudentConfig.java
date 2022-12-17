@@ -14,7 +14,7 @@ public class StudentConfig {
     }
 
     @Bean
-    public Students previousCohort(List<Student> previousCohort){
+    public Students previousStudents(List<Student> previousCohort){
         return new Students((previousCohort));
     }
 }

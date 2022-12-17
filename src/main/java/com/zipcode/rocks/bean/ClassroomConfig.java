@@ -22,6 +22,6 @@ public class ClassroomConfig {
 
     @Bean
     public Classroom previousCohort(List<Instructor> instructors, List<Student> students){
-        return new Classroom(instructorsConfig.instructors(instructors), studentConfig.previousCohort(students));
+        return new Classroom(instructorsConfig.instructors(instructors), studentConfig.previousStudents(students));
     }
 }

@@ -16,7 +16,6 @@ public class Instructor extends Person implements Teacher {
 
     @Override
     public void lecture(Iterable<? extends Learner> learners, double numberOfHours) {
-        double length = ((Collection<?>) learners).size();
         double numberOfHoursPerLearner = numberOfHours / ((Collection<?>) learners).size();
 
         for (Learner i : learners) {
