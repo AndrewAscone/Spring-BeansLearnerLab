@@ -10,18 +10,18 @@ import java.util.List;
 public class InstructorsConfig {
 
     @Bean
-    public Instructors tcUsaInstructors(List<Instructor> UsaInstructors){
-        return new Instructors(UsaInstructors);
+    public Instructors tcUsaInstructors(){
+        return Instructors.getInstance();
     }
 
     @Bean
-    public Instructors tcUkInstructors(List<Instructor> UkInstructors){
-        return new Instructors(UkInstructors);
+    public Instructors tcUkInstructors(){
+        return Instructors.getInstance();
     }
 
     @Primary
-    @Bean
-    public Instructors instructors(List<Instructor> zcwInstructors){
-        return new Instructors(zcwInstructors);
+    @Bean(name = "instructors")
+    public Instructors zcwInstructors(){
+        return Instructors.getInstance();
     }
 }

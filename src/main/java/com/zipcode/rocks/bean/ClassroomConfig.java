@@ -3,6 +3,7 @@ package com.zipcode.rocks.bean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 import java.util.List;
 
@@ -16,12 +17,14 @@ public class ClassroomConfig {
     StudentConfig studentConfig;
 
     @Bean
-    public Classroom currentCohort(List<Instructor> instructors, List<Student> students){
-        return new Classroom(instructorsConfig.instructors(instructors), studentConfig.currentStudents(students));
+    @DependsOn({"instructors", "students"})
+    public Classroom currentCohort(){
+        return new Classroom();
     }
 
     @Bean
-    public Classroom previousCohort(List<Instructor> instructors, List<Student> students){
-        return new Classroom(instructorsConfig.instructors(instructors), studentConfig.previousStudents(students));
+    @DependsOn({"instructors", "previousStudents"})
+    public Classroom previousCohort(){
+        return new Classroom();
     }
 }

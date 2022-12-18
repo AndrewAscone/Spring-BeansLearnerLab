@@ -1,28 +1,22 @@
 package com.zipcode.rocks.bean;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Spliterator;
-import java.util.function.Consumer;
+public final class Students extends People<Student> {
 
-public class Students extends People<Student> {
+    private static final Students instance = new Students();
 
-    public Students(List<Student> personList) {
-        super(personList);
+    public Students(){
+        this.add(new Student(1L, "Carolina"));
+        this.add(new Student(2L, "Calvin"));
+        this.add(new Student(3L, "Freddy"));
+        this.add(new Student(4L, "Emory"));
     }
 
-    @Override
-    public Iterator<Student> iterator() {
-        return null;
+    public static Students getInstance(){
+        return instance;
     }
 
-    @Override
-    public void forEach(Consumer<? super Student> action) {
-        super.forEach(action);
+    public Student[] getArray(){
+        return this.toArray(new Student[0]);
     }
 
-    @Override
-    public Spliterator<Student> spliterator() {
-        return super.spliterator();
-    }
 }

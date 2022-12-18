@@ -2,17 +2,22 @@ package com.zipcode.rocks.bean;
 
 public class Classroom {
 
-    Instructors instructors;
+    Instructors instructors = Instructors.getInstance();
 
-    Students students;
+    Students students = Students.getInstance();
 
     public Classroom(Instructors instructors, Students students){
         this.instructors = instructors;
         this.students = students;
     }
 
-    public void hostLecture(Teacher teacher, double numberOfHours){
-        teacher.lecture(students, numberOfHours);
+    public Classroom(){
+
+    }
+
+    public void hostLecture(Long id, double numberOfHours){
+        Teacher teacher = instructors.findById(id);
+        teacher.lecture(students.getArray(), numberOfHours);
     }
 
     public Instructors getInstructors() {

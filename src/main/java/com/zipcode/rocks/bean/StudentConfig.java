@@ -8,13 +8,18 @@ import java.util.List;
 @Configuration
 public class StudentConfig {
 
+//    @Bean(name = "students")
+//    public Students currentStudents(List<Student> currentCohort){
+//        return new Students(currentCohort);
+//    }
+
     @Bean(name = "students")
-    public Students currentStudents(List<Student> currentCohort){
-        return new Students(currentCohort);
+    public Students currentStudents(){
+        return Students.getInstance();
     }
 
     @Bean
-    public Students previousStudents(List<Student> previousCohort){
-        return new Students((previousCohort));
+    public Students previousStudents(){
+        return Students.getInstance();
     }
 }
